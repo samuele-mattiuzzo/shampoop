@@ -1,0 +1,3 @@
+- Different categories (shampoo, parfumes, conditioners, air fresheners, toothpaste, earbuds, silly things...)
+- Ingredients/components in a list (also according to categories, if implement that) and created randomly with % etc
+- If we do the randomized-generation, maybe we can share the recipe online and have some kind of voting system? Funnier if ingredients are stupid (bats eyes, mom's bra etc...)
