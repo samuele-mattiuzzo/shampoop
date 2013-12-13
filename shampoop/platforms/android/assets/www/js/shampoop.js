@@ -32,16 +32,18 @@ var shampoop = {
         $.event.special.swipe.horizontalDistanceThreshold = 120;
         
         // randomizing on right swipe
-        $(document).on("swiperight", "#swipoop", function() {
+        $(document).on("swiperight", "#swipoop", function(evt) {
             // random pick
+            evt.preventDefault();
             var item = poops[Math.floor(Math.random()*poops.length)];
             
             $('#currentpoop').attr('src', item);
         });
 
         // randomizing on left swipe
-        $(document).on("swipeleft", "#swipoop", function() {
+        $(document).on("swipeleft", "#swipoop", function(evt) {
             // random pick
+            evt.preventDefault();
             var item = poops[Math.floor(Math.random()*poops.length)];
             
             $('#currentpoop').attr('src', item);

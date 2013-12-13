@@ -2,13 +2,26 @@
 <widget id="com.example.shampoop" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ShamPoop</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Your friendly poop companion.
     </description>
-    <author email="dev@callback.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="kevin.d.morgan@gmail.com" href="https://github.com/kevincarrogan">
+        Kevin Carrogan
     </author>
+    <author email="samumatt@gmail.com" href="https://github.com/samuele-mattiuzzo">
+        Samuele Mattiuzzo
+    </author>
+
+    <icon src="icon.png" />
+    <icon density="ldpi" platform="android" src="res/drawable-ldpi/icon.png" />
+    <icon density="mdpi" platform="android" src="res/drawable-mdpi/icon.png" />
+    <icon density="hdpi" platform="android" src="res/drawable-hdpi/icon.png" />
+    <icon density="xdpi" platform="android" src="res/drawable-xdpi/icon.png" />
+
     <content src="index.html" />
     <access origin="*" />
+    
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
+    <preference name="EnableViewportScale" value="true" />
+
 </widget>
