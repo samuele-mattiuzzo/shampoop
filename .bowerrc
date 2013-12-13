@@ -1,4 +1,4 @@
 {
-  "directory": "www/js/vendor/",
+  "directory": "shampoop/www/js/libs/",
   "json": "bower.json"
 }
