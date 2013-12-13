@@ -1,0 +1,3 @@
+- Think about an interface/layout
+- Menu with homepage, recipes page, credits, exit button, resembling a native app
+- Blame Pablo for something unrelated
