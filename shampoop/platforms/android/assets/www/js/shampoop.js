@@ -60,7 +60,7 @@ var shampoop = {
             i;
         
         $('#navbar-button').on("click", function(){
-            $('#navbar-list').slideToggle();
+            $('#navbar-list').slideToggle("fast");
             $(this).toggleClass("active");
         });
 
@@ -68,21 +68,45 @@ var shampoop = {
         for (i = 0; i < menu_elements.length; i++) { this.fireMenuAction(menu_elements[i]); }
     },
 
-    gestureHandler: function() {
-        var swipoopEl = $('#swipoop').get(0),
+    labelAnimate: function(direction, currentpoop) {
+
+        var modifier,
+            screen_offset = (screen.width/2.5),
             $currentPoop = $('#currentpoop'),
-            events = ['swiperight', 'swipeleft', 'dragright', 'dragleft', 'click'],
+            $labels = $('#labels');
+
+        // Gets the offset
+        var offset = $labels.offset().left;
+
+        if (direction === 'left') { modifier = '-'; }
+        if (direction === 'right') { modifier = '+'; }
+
+        // Animates
+        $labels.animate({
+            left: modifier + '=' + screen_offset,
+            opacity: 0.7,
+        }, 500, function() {
+            //Complete callback: reset position, replace content
+            $currentPoop.prop('src', currentpoop);
+            $labels.offset({ left: offset });
+        });
+
+    },
+
+    gestureHandler: function() {
+        var self = this,
+            swipoopEl = $('#swipoop').get(0),
+            events = ['swiperight', 'swipeleft', 'dragright', 'dragleft'],
             i;
 
         // Swipe handling
         for (i = 0; i < events.length; i++) {
-            console.log('Swipoop' + swipoopEl);
-            console.log('Current poop' + $currentPoop);
-            console.log(events[i]);
             Hammer(swipoopEl).on(events[i], function (ev) {
                 var item = poops[Math.floor(Math.random() * poops.length)];
-                console.log('This is item' + item);
-                $currentPoop.prop('src', item);
+                console.log('This is item ' + item);
+
+                // Animates the sliding label, replaces the content
+                self.labelAnimate(ev.gesture.direction, item);
             });
         }
     },
