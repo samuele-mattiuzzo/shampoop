@@ -2,6 +2,7 @@
   "name": "shampoop",
   "version": "0.0.1",
   "dependencies": {
+    "bootstrap": "~3.0.3",
     "requirejs": "~2.1.9",
     "modernizr": "~2.7.0",
     "hammerjs": "~1.0.5",
