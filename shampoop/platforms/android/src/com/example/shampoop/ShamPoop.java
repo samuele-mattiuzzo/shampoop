@@ -29,6 +29,7 @@ public class ShamPoop extends DroidGap
     {
         super.onCreate(savedInstanceState);
         // Set by <content src="index.html" /> in config.xml
+        super.setIntegerProperty("splashscreen", R.drawable.splash);
         super.loadUrl(Config.getStartUrl());
         //super.loadUrl("file:///android_asset/www/index.html")
     }
