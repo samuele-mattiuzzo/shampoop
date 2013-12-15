@@ -34,9 +34,7 @@ var shampoop = {
             i;
         
         for (i = 0; i< menu_events.length; i++) {
-            console.log(menu_events[i]);
             Hammer(menuEl).on(menu_events[i], function (ev) {
-                ev.gesture.preventDefault();
 
                 // Exits the app
                 if (menu_el === '#menu_exit') { navigator.app.exitApp(); }
@@ -73,16 +71,14 @@ var shampoop = {
     gestureHandler: function() {
         var swipoopEl = $('#swipoop').get(0),
             $currentPoop = $('#currentpoop'),
-            events = ['swiperight', 'swipeleft', 'dragright', 'dragleft'],
+            events = ['swiperight', 'swipeleft', 'dragright', 'dragleft', 'click'],
             i;
 
         // Swipe handling
         for (i = 0; i < events.length; i++) {
-            console.log(events[i]);
             Hammer(swipoopEl).on(events[i], function (ev) {
                 var item = poops[Math.floor(Math.random() * poops.length)];
-                console.log(item);
-                console.log($currentPoop);
+                console.log('This is item' + item);
                 $currentPoop.prop('src', item);
             });
         }
