@@ -27,14 +27,13 @@ html {
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' background-color:#E4E4E4;*/
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size: 12px;
+    font-size: 18px;
+    font-weight: bold;
     height: 100%;
     margin: 0;
     padding: 0;
-    padding-top: 70px;
     text-transform: uppercase;
     width: 100%;
     overflow: hidden;
@@ -70,13 +69,150 @@ h1 {
 }
 
 /* Main app css */
-.swipoop {
-    width: 100%;
-    padding-top: 25%;
-    overflow: hidden;
+.etiquette {
+    min-height: 100%;
+    margin-bottom: 0;
 }
 
 .currentpoop {
     width: 95%;
     vertical-align: auto;
+}
+
+/* MENU */
+.navbar {
+    min-height: 55px;
+    margin-bottom: 25px;
+    background-color: #222;
+    padding: 2%;
+    padding-top: 4%;
+    position: relative;
+}
+
+.navbar-title {
+    display: inline-block;
+    height: 50%;
+    margin: auto;
+    margin-left: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #FFF;
+}
+
+.navbar-logo {
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+}
+
+.navbar-menu-btn {
+    display: inline-block;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    float: right;
+    border-radius: 3px;
+    margin-right: 30px;
+    background: url('../icon.png') no-repeat;
+}
+
+/*
+.navbar-menu-btn:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 48px;
+    height: 10px;
+    border-top: 1.8em double #AAA;
+    border-bottom: 0.6em solid #AAA;
+    background-color: #222;
+}*/
+
+.navbar-menu-dropdown {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    z-index: 500;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    left: 0;
+}
+
+.navbar-menu-dropdown li.even {
+    padding: 0.5em;
+    margin: 0;
+    background-color: #222;
+}
+
+.navbar-menu-dropdown li.odd {
+    padding: 0.5em;
+    margin: 0;
+    background-color: #333;
+}
+
+.navbar-menu-dropdown li a {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #AAA;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    font-size: 40px;
+    display: block;
+}
+
+.navbar-menu-dropdown li a:visited, a:link, a:hover, a:active { text-decoration: none; }
+
+.animate {
+    -webkit-transition: -webkit-transform 0.5s;
+}
+
+/* Mocking Bootstrap's jumbotron and container*/
+.jumbotron {
+  padding: 20px;
+  min-height: 95%;
+  max-height: 95%;
+  padding-bottom: 100px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: inherit;
+  background-color: #eeeeee;
+  text-align: center;
+}
+
+.container .jumbotron {
+  border-radius: 6px;
+}
+
+.jumbotron .container {
+  max-width: 100%;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container:before,
+.container:after {
+  display: table;
+  content: " ";
+}
+
+.container:after {
+  clear: both;
+}
+
+.container:before,
+.container:after {
+  display: table;
+  content: " ";
+}
+
+.container:after {
+  clear: both;
 }

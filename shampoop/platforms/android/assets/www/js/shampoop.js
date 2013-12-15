@@ -35,12 +35,55 @@ var shampoop = {
         
         for (i = 0; i< menu_events.length; i++) {
             console.log(menu_events[i]);
-            Hammer(menuEl).on(menu_events[i], function () {
-                if (menu_el === '#exit') { navigator.app.exitApp(); }
+            Hammer(menuEl).on(menu_events[i], function (ev) {
+                ev.gesture.preventDefault();
 
-                if (menu_el === '#about') { console.log(menu_el); }
+                // Exits the app
+                if (menu_el === '#menu_exit') { navigator.app.exitApp(); }
 
-                if (menu_el === '#lectures') { console.log(menu_el); }
+                // About page
+                if (menu_el === '#menu_about') {
+                    $('#about').css('display', 'block');
+                    $('#labels').css('display', 'none');
+                }
+
+                // Labels page
+                if (menu_el === '#menu_labels') {
+                    $('#labels').css('display', 'block');
+                    $('#about').css('display', 'none');
+                }
+            });
+        }
+    },
+
+    menuHandler: function() {
+
+        var menu_elements = ['#menu_exit', '#menu_about', '#menu_labels'],
+            i;
+        
+        $('#navbar-button').on("click", function(){
+            $('#navbar-list').slideToggle();
+            $(this).toggleClass("active");
+        });
+
+        // Menu actions
+        for (i = 0; i < menu_elements.length; i++) { this.fireMenuAction(menu_elements[i]); }
+    },
+
+    gestureHandler: function() {
+        var swipoopEl = $('#swipoop').get(0),
+            $currentPoop = $('#currentpoop'),
+            events = ['swiperight', 'swipeleft', 'dragright', 'dragleft'],
+            i;
+
+        // Swipe handling
+        for (i = 0; i < events.length; i++) {
+            console.log(events[i]);
+            Hammer(swipoopEl).on(events[i], function (ev) {
+                var item = poops[Math.floor(Math.random() * poops.length)];
+                console.log(item);
+                console.log($currentPoop);
+                $currentPoop.prop('src', item);
             });
         }
     },
@@ -48,24 +91,8 @@ var shampoop = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
 
-        var swipoopEl = $('#swipoop').get(0),
-            $currentPoop = $('#currentpoop'),
-            events = ['swiperight', 'swipeleft', 'dragright', 'dragleft'],
-            menu_elements = ['#exit', '#about', '#app'],
-            i, j;
+        this.menuHandler();
+        this.gestureHandler();
 
-        for (i = 0; i < events.length; i++) {
-            console.log(events[i]);
-            Hammer(swipoopEl).on(events[i], function () {
-                var item = poops[Math.floor(Math.random() * poops.length)];
-
-                $currentPoop.prop('src', item);
-            });
-        }
-
-        for (j = 0; j < menu_elements.length; j++) {
-            console.log(menu_elements[j]);
-            this.fireMenuAction(menu_elements[j]);
-        }
     }
 };

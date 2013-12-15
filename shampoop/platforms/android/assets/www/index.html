@@ -6,35 +6,35 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 
-        <link rel="stylesheet" type="text/css" href="css/libs/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
     </head>
 
     <!-- app body -->
     <body>
+        <!-- top navbar -->
+        <div class="navbar">
+            <div class="navbar-title">SHAMPOOP</div>
+            <a id="navbar-button" class="navbar-menu-btn"></a>
 
-        <!-- Fixed navbar -->
-        <div class="navbar navbar-inverse" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#">Shampoops</a>
-            </div>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active" id="lectures"><a href="#">Lectures</a></li>
-                <li id="about"><a href="#">About</a></li>
-                <li id="exit"><a href="#">Exit</a></li>
-              </ul>
-            </div><!--/.nav-collapse -->
-          </div>
+            <ul id="navbar-list" class="navbar-menu-dropdown">
+                <li id="menu_labels" class="odd"><a href="#">Labels</a></li>
+                <li id="menu_about" class="even"><a href="#">About</a></li>
+                <li id="menu_exit" class="odd"><a href="#">Exit</a></li>
+            </ul>
+
         </div>
 
         <!-- main container -->
         <div class="container">
-            <div class="jumbotron" id="swipoop">
+            <div class="jumbotron etiquette" id="labels">
                 <div data-role="content" class="swipoop">
                     <img src="img/shampoo_img_1.jpg" id="currentpoop" class="currentpoop" />
                 </div>
+            </div>
+
+            <div class="jumbotron etiquette" style="display: none;" id="about">
+                <p>ASHDHASIUDHASUIDASDUIDASHDIASHUDIHASDUISA</p>
             </div>
         </div>
     </body>
@@ -43,7 +43,6 @@
     <script type="text/javascript" src="libs/jquery/jquery.min.js"></script>
 
     <!-- other shitty dependencies -->
-    <script type="text/javascript" src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="libs/hammerjs/dist/hammer.min.js"></script>
     
     <!-- cordova and shampoop.js -->
