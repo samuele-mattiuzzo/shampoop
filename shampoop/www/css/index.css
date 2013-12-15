@@ -34,6 +34,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    padding-top: 70px;
     text-transform: uppercase;
     width: 100%;
     overflow: hidden;
@@ -68,7 +69,7 @@ h1 {
     to { opacity: 1.0; }
 }
 
-/* Main app css */
+/* Main app css
 .swipoop {
     width: 100%;
     padding-top: 25%;
@@ -79,3 +80,4 @@ h1 {
     width: 95%;
     vertical-align: auto;
 }
+ */

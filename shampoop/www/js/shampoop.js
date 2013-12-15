@@ -26,13 +26,33 @@ var shampoop = {
     onDeviceReady: function() {
         shampoop.receivedEvent('deviceready');
     },
+
+    // Fires menu events
+    fireMenuAction: function(menu_el) {
+        var menu_events = ['tap', 'touch'],
+            menuEl = $(menu_el).get(0),
+            i;
+        
+        for (i = 0; i< menu_events.length; i++) {
+            console.log(menu_events[i]);
+            Hammer(menuEl).on(menu_events[i], function () {
+                if (menu_el === '#exit') { navigator.app.exitApp(); }
+
+                if (menu_el === '#about') { console.log(menu_el); }
+
+                if (menu_el === '#lectures') { console.log(menu_el); }
+            });
+        }
+    },
+
     // Update DOM on a Received Event
     receivedEvent: function(id) {
 
         var swipoopEl = $('#swipoop').get(0),
             $currentPoop = $('#currentpoop'),
             events = ['swiperight', 'swipeleft', 'dragright', 'dragleft'],
-            i;
+            menu_elements = ['#exit', '#about', '#app'],
+            i, j;
 
         for (i = 0; i < events.length; i++) {
             console.log(events[i]);
@@ -41,6 +61,11 @@ var shampoop = {
 
                 $currentPoop.prop('src', item);
             });
+        }
+
+        for (j = 0; j < menu_elements.length; j++) {
+            console.log(menu_elements[j]);
+            this.fireMenuAction(menu_elements[j]);
         }
     }
 };
