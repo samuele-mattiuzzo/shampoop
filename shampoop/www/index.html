@@ -13,13 +13,12 @@
     <body>
         <!-- top navbar -->
         <div class="navbar">
-            <div class="navbar-logo"></div>
             <div class="navbar-title">SHAMPOOP</div>
             <a id="navbar-button" class="navbar-menu-btn"></a>
 
             <ul id="navbar-list" class="navbar-menu-dropdown">
-                <li class="odd"><a href="#">Labels</a></li>
-                <li class="even"><a href="#" id="linkInstructions">About</a></li>
+                <li id="labels" class="odd"><a href="#">Labels</a></li>
+                <li id="about" class="even"><a href="#">About</a></li>
                 <li id="exit" class="odd"><a href="#">Exit</a></li>
             </ul>
 
@@ -27,10 +26,14 @@
 
         <!-- main container -->
         <div class="container">
-            <div class="jumbotron etiquette" id="swipoop">
+            <div class="jumbotron etiquette" id="labels">
                 <div data-role="content" class="swipoop">
                     <img src="img/shampoo_img_1.jpg" id="currentpoop" class="currentpoop" />
                 </div>
+            </div>
+
+            <div class="jumbotron etiquette" style="display: none;" id="about">
+                <p>ASHDHASIUDHASUIDASDUIDASHDIASHUDIHASDUISA</p>
             </div>
         </div>
     </body>
@@ -41,8 +44,8 @@
     <!-- other shitty dependencies -->
     <script type="text/javascript" src="libs/hammerjs/dist/hammer.min.js"></script>
     
-    <!-- cordova and shampoop.js -->
-    <script type="text/javascript" src="cordova.js"></script>
+    <!-- cordova and shampoop.js 
+    <script type="text/javascript" src="cordova.js"></script>-->
     <script type="text/javascript" src="js/shampoop.js"></script>
     
     <!-- le app -->

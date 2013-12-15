@@ -93,7 +93,7 @@ h1 {
     display: inline-block;
     height: 50%;
     margin: auto;
-    margin-left: 20px;
+    margin-left: 30px;
     font-size: 40px;
     font-weight: bold;
     color: #FFF;
@@ -103,7 +103,6 @@ h1 {
     display: inline-block;
     height: 48px;
     width: 48px;
-    background: url('../icon.png') no-repeat;
 }
 
 .navbar-menu-btn {
@@ -113,8 +112,11 @@ h1 {
     height: 48px;
     float: right;
     border-radius: 3px;
+    margin-right: 30px;
+    background: url('../icon.png') no-repeat;
 }
 
+/*
 .navbar-menu-btn:before {
     content: "";
     position: absolute;
@@ -124,7 +126,7 @@ h1 {
     border-top: 1.8em double #AAA;
     border-bottom: 0.6em solid #AAA;
     background-color: #222;
-}
+}*/
 
 .navbar-menu-dropdown {
     display: none;
@@ -177,6 +179,7 @@ h1 {
   line-height: 2.1428571435;
   color: inherit;
   background-color: #eeeeee;
+  text-align: center;
 }
 
 .container .jumbotron {

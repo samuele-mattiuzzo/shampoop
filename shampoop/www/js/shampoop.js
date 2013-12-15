@@ -36,11 +36,21 @@ var shampoop = {
         for (i = 0; i< menu_events.length; i++) {
             console.log(menu_events[i]);
             Hammer(menuEl).on(menu_events[i], function () {
-                if (menu_el === '#exit') { navigator.app.exitApp(); }
+                if (menu_el === '#exit') {
+                    navigator.app.exitApp();
+                }
 
-                if (menu_el === '#about') { console.log(menu_el); }
+                if (menu_el === '#about') {
+                    console.log(menu_el);
+                    menuEl.show();
+                    $('#swipoop').hide();
 
-                if (menu_el === '#lectures') { console.log(menu_el); }
+                }
+                if (menu_el === '#labels') {
+                    console.log(menu_el);
+                    menuEl.show();
+                    $('#about').hide();
+                }
             });
         }
     },
@@ -56,7 +66,7 @@ var shampoop = {
         var swipoopEl = $('#swipoop').get(0),
             $currentPoop = $('#currentpoop'),
             events = ['swiperight', 'swipeleft', 'dragright', 'dragleft'],
-            menu_elements = ['#exit', '#about', '#app'],
+            menu_elements = ['#exit', '#about', '#labels'],
             i, j;
 
         for (i = 0; i < events.length; i++) {
