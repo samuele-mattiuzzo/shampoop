@@ -1,11 +1,11 @@
 // initializes the images list
 var poops = [
-    'img/shampoo_img_1.jpg',
-    'img/shampoo_img_2.jpg',
-    'img/shampoo_img_3.jpg',
-    'img/shampoo_img_4.jpg',
-    'img/shampoo_img_5.jpg',
-];
+        'img/shampoo_img_1.jpg',
+        'img/shampoo_img_2.jpg',
+        'img/shampoo_img_3.jpg',
+        'img/shampoo_img_4.jpg',
+        'img/shampoo_img_5.jpg',
+    ];
 
 var shampoop = {
     // Application Constructor
@@ -28,25 +28,19 @@ var shampoop = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        
-        $.event.special.swipe.horizontalDistanceThreshold = 120;
-        
-        // randomizing on right swipe
-        $(document).on("swiperight", "#swipoop", function(evt) {
-            // random pick
-            evt.preventDefault();
-            var item = poops[Math.floor(Math.random()*poops.length)];
-            
-            $('#currentpoop').attr('src', item);
-        });
 
-        // randomizing on left swipe
-        $(document).on("swipeleft", "#swipoop", function(evt) {
-            // random pick
-            evt.preventDefault();
-            var item = poops[Math.floor(Math.random()*poops.length)];
-            
-            $('#currentpoop').attr('src', item);
-        });
+        var swipoopEl = $('#swipoop').get(0),
+            $currentPoop = $('#currentpoop'),
+            events = ['swiperight', 'swipeleft', 'dragright', 'dragleft'],
+            i;
+
+        for (i = 0; i < events.length; i++) {
+            console.log(events[i]);
+            Hammer(swipoopEl).on(events[i], function () {
+                var item = poops[Math.floor(Math.random() * poops.length)];
+
+                $currentPoop.prop('src', item);
+            });
+        }
     }
 };
