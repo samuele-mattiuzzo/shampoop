@@ -48,6 +48,11 @@ var shampoop = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
 
+        $('#navbar-button').on("click", function(){
+            $('#navbar-list').slideToggle();
+            $(this).toggleClass("active");
+        });
+
         var swipoopEl = $('#swipoop').get(0),
             $currentPoop = $('#currentpoop'),
             events = ['swiperight', 'swipeleft', 'dragright', 'dragleft'],
