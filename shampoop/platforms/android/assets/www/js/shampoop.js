@@ -116,7 +116,7 @@ var shampoop = {
 
         setTimeout(function(){
             navigator.splashscreen.hide();
-        }, 1500);
+        }, 7500);
 
         this.menuHandler();
         this.gestureHandler();
