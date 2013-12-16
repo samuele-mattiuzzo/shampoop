@@ -20,6 +20,16 @@ var shampoop = {
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        this.initializePoops();
+    },
 
+    initializePoops: function () {
+        var $poopList = $('.poops'),
+            $poops = $poopList.find('li'),
+            $first = $poops.first(),
+            $rest = $poops.slice(1);
+
+        $first.addClass('visible');
+        $rest.addClass('hidden');
     }
 };
