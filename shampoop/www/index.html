@@ -1,66 +1,39 @@
-<!DOCTYPE html> 
-<html> 
-    <head> 
-        <title>Shampoop</title> 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" type="text/css" href="css/reset.css" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-    </head>
+    <title>Shampoop</title>
 
-    <!-- app body -->
-    <body>
-        <!-- top navbar -->
-        <div class="navbar">
-            <div class="navbar-title">SHAMPOOP</div>
-            <a id="navbar-button" class="navbar-menu-btn"></a>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
 
-            <ul id="navbar-list" class="navbar-menu-dropdown">
-                <li id="menu_labels" class="odd"><a href="#">Labels</a></li>
-                <li id="menu_about" class="even"><a href="#">About</a></li>
-                <li id="menu_exit" class="odd"><a href="#">Exit</a></li>
+    <script src="libs/modernizr/modernizr.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Shampoop</h1>
+
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
             </ul>
+        </nav>
+    </header>
 
-        </div>
+    <main>
+        <img src="img/shampoo_img_1.jpg" />
+    </main>
 
-        <!-- main container -->
-        <div class="container">
-            <div class="jumbotron etiquette" id="labels">
-                <div data-role="content" id="swipoop" class="swipoop">
-                    <img src="img/shampoo_img_1.jpg" id="currentpoop" class="currentpoop" />
-                </div>
-            </div>
+    <script src="cordova.js"></script>
+    <script src="js/shampoop.js"></script> 
 
-            <div class="jumbotron etiquette" style="display: none;" id="about">
-                <p>THIS IS</p>
-                <p class='app-name'>SHAMPOOP</p>
-                <p>VERSION</p>
-                <p class='app-version'>0.0.1</p>
-                <br/>
-                <p>AUTHORS:</p>
-                <ul class='authors'>
-                    <li>Kevin Carrogan</li>
-                    <li>Samuele Mattiuzzo</li>
-                </ul>
-                <p>Copyright&copy; 2013</p>
-            </div>
-        </div>
-    </body>
-
-    <!-- shitquery -->
-    <script type="text/javascript" src="libs/jquery/jquery.min.js"></script>
-
-    <!-- other shitty dependencies -->
-    <script type="text/javascript" src="libs/hammerjs/dist/hammer.min.js"></script>
-    
-    <!-- cordova and shampoop.js -->
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/shampoop.js"></script>
-    
-    <!-- le app -->
     <script>
         shampoop.initialize();
     </script>
+</body>
 </html>
