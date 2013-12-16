@@ -25,8 +25,13 @@ var shampoop = {
 
     initializePoops: function () {
         var $poopList = $('.poops'),
-            $poops = $poopList.find('li'),
-            $first = $poops.first(),
+            $poops = $poopList.find('li');
+
+        this.setVisibilities($poops);
+    },
+
+    setVisibilities: function ($poops) {
+        var $first = $poops.first(),
             $rest = $poops.slice(1);
 
         $first.addClass('visible');
