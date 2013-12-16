@@ -114,7 +114,6 @@ var shampoop = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
 
-        navigator.splashscreen.show();
         this.menuHandler();
         this.gestureHandler();
 

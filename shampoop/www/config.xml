@@ -11,6 +11,8 @@
         Samuele Mattiuzzo
     </author>
 
+    <plugin name="SplashScreen" value="org.apache.cordova.SplashScreen"/>
+
     <icon src="icon.png" />
     <icon density="ldpi" platform="android" src="res/drawable-ldpi/icon.png" />
     <icon density="mdpi" platform="android" src="res/drawable-mdpi/icon.png" />
@@ -18,10 +20,10 @@
     <icon density="xdpi" platform="android" src="res/drawable-xdpi/icon.png" />
 
     <splash src="splash.png" />
-    <splash density="ldpi" platform="android" src="res/drawable-ldpi/splash-320x426.png" />
-    <splash density="mdpi" platform="android" src="res/drawable-mdpi/splash-320x470.png" />
-    <splash density="hdpi" platform="android" src="res/drawable-hdpi/splash-480x640.png" />
-    <splash density="xdpi" platform="android" src="res/drawable-xdpi/splash-720x960.png" />
+    <splash density="ldpi" platform="android" src="res/drawable-ldpi/splash_320x426.png" />
+    <splash density="mdpi" platform="android" src="res/drawable-mdpi/splash_320x470.png" />
+    <splash density="hdpi" platform="android" src="res/drawable-hdpi/splash_480x640.png" />
+    <splash density="xdpi" platform="android" src="res/drawable-xdpi/splash_720x960.png" />
 
     <content src="index.html" />
     <access origin="*" />
@@ -29,6 +31,6 @@
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
     <preference name="EnableViewportScale" value="true" />
-    <plugin name="SplashScreen" value="org.apache.cordova.SplashScreen"/>
+    
 
 </widget>
