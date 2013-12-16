@@ -19,7 +19,7 @@
     <icon density="hdpi" platform="android" src="res/drawable-hdpi/icon.png" />
     <icon density="xdpi" platform="android" src="res/drawable-xdpi/icon.png" />
 
-    <splash platform="android" src="splash.png" />
+    <splash src="splash.png" />
     <splash density="ldpi" platform="android" src="res/drawable-ldpi/splash_320x426.png" />
     <splash density="mdpi" platform="android" src="res/drawable-mdpi/splash_320x470.png" />
     <splash density="hdpi" platform="android" src="res/drawable-hdpi/splash_480x640.png" />

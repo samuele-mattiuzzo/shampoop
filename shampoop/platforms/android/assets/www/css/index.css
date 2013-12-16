@@ -81,7 +81,7 @@ h1 {
 
 /* MENU */
 .navbar {
-    min-height: 55px;
+    min-height: 45px;
     margin-bottom: 25px;
     background-color: #222;
     padding: 2%;
@@ -94,7 +94,7 @@ h1 {
     height: 50%;
     margin: auto;
     margin-left: 30px;
-    font-size: 25px;
+    font-size: 40px;
     font-weight: bold;
     color: #FFF;
 }
@@ -108,8 +108,8 @@ h1 {
 .navbar-menu-btn {
     display: inline-block;
     position: relative;
-    width: 30px;
-    height: 30px;
+    width: 48px;
+    height: 48px;
     float: right;
     border-radius: 3px;
     margin-right: 30px;

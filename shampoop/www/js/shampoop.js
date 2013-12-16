@@ -114,6 +114,10 @@ var shampoop = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
 
+        setTimeout(function(){
+            navigator.splashscreen.hide();
+        }, 7500);
+
         this.menuHandler();
         this.gestureHandler();
 
