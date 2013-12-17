@@ -15,3 +15,7 @@ header {
 .poops .hidden {
     display: none;
 }
+
+.poops li {
+    display: inline-block;
+}
