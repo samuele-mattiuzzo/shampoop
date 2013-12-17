@@ -28,7 +28,6 @@ var shampoop = {
             $poops = $poopList.find('li');
 
         this.setPositions($poops);
-        this.setVisibilities($poops);
     },
 
     setPositions: function ($poops) {
@@ -86,17 +85,10 @@ var shampoop = {
             left = (viewPortWidth - elementWidth) / 2 + (index * viewPortWidth);
 
         $el.css({
+            'left': 0,
             'margin-left': left,
-            'margin-right': left
+            'margin-right': left,
         });
-    },
-
-    setVisibilities: function ($poops) {
-        var $first = $poops.first(),
-            $rest = $poops.slice(1);
-
-        $first.addClass('visible');
-        $rest.addClass('hidden');
     }
 
 };
