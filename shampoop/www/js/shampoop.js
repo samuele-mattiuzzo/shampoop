@@ -93,9 +93,7 @@ var shampoop = {
     setLeft: function ($el, index, elementDimensions, viewPortDimensions) {
         var viewPortWidth = viewPortDimensions.width,
             elementWidth = elementDimensions.width,
-            left;
-
-        left = (viewPortWidth - elementWidth) / 2 + (index * viewPortWidth);
+            left = (viewPortWidth - elementWidth) / 2 + (index * viewPortWidth);
 
         $el.css({
             'margin-left': left,
