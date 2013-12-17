@@ -23,6 +23,7 @@ var shampoop = {
         var $poops = $('.poops');
         this.setContainerWidth($poops);
         this.setPoopWidths($poops);
+        this.setPoopMargins($poops);
     },
 
     setContainerWidth: function ($container) {
@@ -58,6 +59,20 @@ var shampoop = {
                 'overflow': 'hidden',
                 'width': poopWidth + 'px'
             });
+        });
+    },
+
+    setPoopMargins: function ($container) {
+        var $children = $container.find('li'),
+            viewportDimensions = this.getViewPortDimensions(),
+            viewportHeight = viewportDimensions.height;
+
+        _.each($children, function (child) {
+            var $child = $(child),
+                height = $child.height(),
+                marginTop = (viewportHeight - height) / 2;
+
+            $child.css('margin-top', marginTop);
         });
     }
 
