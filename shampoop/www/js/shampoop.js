@@ -83,9 +83,11 @@ var shampoop = {
             elementHeight = elementDimensions.height,
             top = (viewPortHeight - elementHeight) / 2;
 
-        $el.css('top', 0);
-        $el.css('margin-top', top);
-        $el.css('margin-bottom', top);
+        $el.css({
+            'top': 0,
+            'margin-top': top,
+            'margin-bottom': top
+        });
     },
 
     setLeft: function ($el, index, elementDimensions, viewPortDimensions) {
