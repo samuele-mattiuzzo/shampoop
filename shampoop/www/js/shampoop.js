@@ -87,7 +87,14 @@ var shampoop = {
     },
 
     setLeft: function ($el, $previousPoop, elementDimensions, viewPortDimensions) {
-        // pass
+        var viewPortWidth = viewPortDimensions.width,
+            elementWidth = elementDimensions.width,
+            left;
+        if (!$previousPoop) {
+            left = (viewPortWidth - elementWidth) / 2;
+
+            $el.css('left', left);
+        }
     }
 
 };
