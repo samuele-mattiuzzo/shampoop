@@ -58,16 +58,11 @@ var shampoop = {
     },
 
     setPosition: function ($el, previousPoopDimensions, viewPortDimensions) {
-        var elementDimensions = this.getElementDimensions($el),
-            viewPortHeight = viewPortDimensions.height,
-            elementHeight = elementDimensions.height,
-            top = (viewPortHeight - elementHeight) / 2;
+        var elementDimensions = this.getElementDimensions($el);
 
         $el.css('position', 'absolute');
 
-        $el.css({
-            'top': top
-        });
+        this.setTop($el, elementDimensions, viewPortDimensions);
 
         return elementDimensions;
     },
@@ -79,6 +74,14 @@ var shampoop = {
             height: $img.height(),
             width: $img.width()
         };
+    },
+
+    setTop: function ($el, elementDimensions, viewPortDimensions) {
+        var viewPortHeight = viewPortDimensions.height,
+            elementHeight = elementDimensions.height,
+            top = (viewPortHeight - elementHeight) / 2;
+
+        $el.css('top', top);
     }
 
 };
