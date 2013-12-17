@@ -40,10 +40,11 @@ var shampoop = {
     },
 
     setPositions: function ($poops) {
+        var previousPoopDimensions = null;
         _.each($poops, function (poop) {
             var $poop = $(poop),
                 viewPortDimensions = this.getViewPortDimensions();
-            this.setPosition($poop, viewPortDimensions);
+            previousPoopDimensions = this.setPosition($poop, previousPoopDimensions, viewPortDimensions);
         }, this);
     },
 
@@ -56,12 +57,19 @@ var shampoop = {
         };
     },
 
-    setPosition: function ($el, viewPortDimensions) {
-        var elementDimensions = this.getElementDimensions($el);
+    setPosition: function ($el, previousPoopDimensions, viewPortDimensions) {
+        var elementDimensions = this.getElementDimensions($el),
+            viewPortHeight = viewPortDimensions.height,
+            elementHeight = elementDimensions.height,
+            top = (viewPortHeight - elementHeight) / 2;
 
-        $el.css('position', 'relative');
+        $el.css('position', 'absolute');
 
-        this.setMarginTop($el, elementDimensions.height, viewPortDimensions.height);
+        $el.css({
+            'top': top
+        });
+
+        return elementDimensions;
     },
 
     getElementDimensions: function ($el) {
@@ -71,11 +79,6 @@ var shampoop = {
             height: $img.height(),
             width: $img.width()
         };
-    },
-
-    setMarginTop: function ($el, elementHeight, viewPortHeight) {
-        var marginTop = (viewPortHeight - elementHeight) / 2;
-
-        $el.css('margin-top', marginTop);
     }
+
 };
