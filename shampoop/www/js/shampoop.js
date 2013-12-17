@@ -20,6 +20,29 @@ var shampoop = {
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        var $poops = $('.poops');
+        this.setContainerWidth($poops);
+    },
+
+    setContainerWidth: function ($container) {
+        $container.css('width', this.getDesiredContainerWidth($container) + 'px');
+    },
+
+    getDesiredContainerWidth: function ($container) {
+        var $children = $container.find('li'),
+            viewportDimensions = this.getViewPortDimensions(),
+            viewportWidth = viewportDimensions.width;
+
+        return $children.length * viewportWidth;
+    },
+
+    getViewPortDimensions: function () {
+        var $window = $(window);
+
+        return {
+            'height': $window.height(),
+            'width': $window.width()
+        };
     }
 
 };

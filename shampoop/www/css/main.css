@@ -12,10 +12,6 @@ header {
     padding: 0;
 }
 
-.poops .hidden {
-    display: none;
-}
-
 .poops li {
-    display: inline-block;
+    float: left;
 }
