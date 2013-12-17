@@ -31,14 +31,6 @@ var shampoop = {
         this.setVisibilities($poops);
     },
 
-    setVisibilities: function ($poops) {
-        var $first = $poops.first(),
-            $rest = $poops.slice(1);
-
-        $first.addClass('visible');
-        $rest.addClass('hidden');
-    },
-
     setPositions: function ($poops) {
         var $previousPoop = null;
         _.each($poops, function (poop, index) {
@@ -99,6 +91,14 @@ var shampoop = {
             'margin-left': left,
             'margin-right': left
         });
+    },
+
+    setVisibilities: function ($poops) {
+        var $first = $poops.first(),
+            $rest = $poops.slice(1);
+
+        $first.addClass('visible');
+        $rest.addClass('hidden');
     }
 
 };
