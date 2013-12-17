@@ -97,7 +97,10 @@ var shampoop = {
 
         left = (viewPortWidth - elementWidth) / 2 + (index * viewPortWidth);
 
-        $el.css('left', left);
+        $el.css({
+            'margin-left': left,
+            'margin-right': left
+        });
     }
 
 };
