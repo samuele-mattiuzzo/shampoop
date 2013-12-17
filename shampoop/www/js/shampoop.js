@@ -32,12 +32,10 @@ var shampoop = {
     },
 
     setPositions: function ($poops) {
-        var $previousPoop = null;
         _.each($poops, function (poop, index) {
             var $poop = $(poop),
                 viewPortDimensions = this.getViewPortDimensions();
             this.setPosition($poop, index, viewPortDimensions);
-            $previousPoop = $poop;
         }, this);
     },
 
