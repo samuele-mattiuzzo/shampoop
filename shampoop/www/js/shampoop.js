@@ -22,6 +22,7 @@ var shampoop = {
     receivedEvent: function(id) {
         var $poops = $('.poops');
         this.setContainerWidth($poops);
+        this.setPoopWidths($poops);
     },
 
     setContainerWidth: function ($container) {
@@ -43,6 +44,21 @@ var shampoop = {
             'height': $window.height(),
             'width': $window.width()
         };
+    },
+
+    setPoopWidths: function ($container) {
+        var $children = $container.find('li'),
+            containerWidth = this.getDesiredContainerWidth($container),
+            poopWidth = containerWidth / $children.length;
+
+        _.each($children, function (child) {
+            var $child = $(child);
+
+            $child.css({
+                'overflow': 'hidden',
+                'width': poopWidth + 'px'
+            });
+        });
     }
 
 };
