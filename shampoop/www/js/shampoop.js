@@ -41,10 +41,10 @@ var shampoop = {
 
     setPositions: function ($poops) {
         var $previousPoop = null;
-        _.each($poops, function (poop) {
+        _.each($poops, function (poop, index) {
             var $poop = $(poop),
                 viewPortDimensions = this.getViewPortDimensions();
-            this.setPosition($poop, $previousPoop, viewPortDimensions);
+            this.setPosition($poop, index, viewPortDimensions);
             $previousPoop = $poop;
         }, this);
     },
@@ -58,13 +58,13 @@ var shampoop = {
         };
     },
 
-    setPosition: function ($el, $previousPoop, viewPortDimensions) {
+    setPosition: function ($el, index, viewPortDimensions) {
         var elementDimensions = this.getElementDimensions($el);
 
         $el.css('position', 'absolute');
 
         this.setTop($el, elementDimensions, viewPortDimensions);
-        this.setLeft($el, $previousPoop, elementDimensions, viewPortDimensions);
+        this.setLeft($el, index, elementDimensions, viewPortDimensions);
 
         return elementDimensions;
     },
@@ -86,15 +86,14 @@ var shampoop = {
         $el.css('top', top);
     },
 
-    setLeft: function ($el, $previousPoop, elementDimensions, viewPortDimensions) {
+    setLeft: function ($el, index, elementDimensions, viewPortDimensions) {
         var viewPortWidth = viewPortDimensions.width,
             elementWidth = elementDimensions.width,
             left;
-        if (!$previousPoop) {
-            left = (viewPortWidth - elementWidth) / 2;
 
-            $el.css('left', left);
-        }
+        left = (viewPortWidth - elementWidth) / 2 + (index * viewPortWidth);
+
+        $el.css('left', left);
     }
 
 };
