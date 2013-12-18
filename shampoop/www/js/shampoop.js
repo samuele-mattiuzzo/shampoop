@@ -33,6 +33,7 @@ var shampoop = {
     },
 
     setContainerStyles: function ($container) {
+        // Adding styles to stop native drag behaviour doing bad things
         $container.css({
             '-webkit-tap-highlight-color': 'rgba(0, 0, 0, 0)',
             '-webkit-user-drag': 'none',
