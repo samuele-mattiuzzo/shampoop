@@ -22,6 +22,8 @@ var shampoop = {
     receivedEvent: function(id) {
         var $poops = $('.poops');
 
+        this.$poops = $poops;
+
         this.setContainerStyles($poops);
         this.setContainerWidth($poops);
 
@@ -119,11 +121,22 @@ var shampoop = {
     },
 
     handleDrag: function (evt, direction) {
-        var gesture = evt.gesture;
+        var gesture = evt.gesture,
+            deltaX = gesture.deltaX;
 
         evt.gesture.preventDefault();
 
-        console.log(evt);
+        this.setTransformX(deltaX);
+    },
+
+    setTransformX: function (deltaX) {
+        var viewPortWidth = this.getViewPortDimensions().width,
+            poopCount = this.$poops.find('li').length,
+            dragOffset = ((100 / viewPortWidth) * deltaX) / poopCount;
+
+        this.$poops.css({
+            '-webkit-transform': 'translate3d(' + dragOffset + '%, 0, 0)'
+        });
     }
 
 };
