@@ -21,9 +21,23 @@ var shampoop = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var $poops = $('.poops');
+
+        this.setContainerStyles($poops);
         this.setContainerWidth($poops);
+
+        this.setPoopStyles($poops);
         this.setPoopWidths($poops);
         this.setPoopMargins($poops);
+
+        this.initializeEvents($poops);
+    },
+
+    setContainerStyles: function ($container) {
+        $container.css({
+            '-webkit-tap-highlight-color': 'rgba(0, 0, 0, 0)',
+            '-webkit-user-drag': 'none',
+            '-webkit-user-select': 'none'
+        });
     },
 
     setContainerWidth: function ($container) {
@@ -45,6 +59,16 @@ var shampoop = {
             'height': $window.height(),
             'width': $window.width()
         };
+    },
+
+    setPoopStyles: function ($container) {
+        var $imgs = $container.find('li > img');
+
+        _.each($imgs, function (img) {
+            var $img = $(img);
+
+            $img.css('-webkit-user-drag', 'none');
+        });
     },
 
     setPoopWidths: function ($container) {
@@ -74,6 +98,31 @@ var shampoop = {
 
             $child.css('margin-top', marginTop);
         });
+    },
+
+    initializeEvents: function ($container) {
+        var hammer = Hammer($container.get(0));
+
+        _.bindAll(this, 'handleDrag', 'handleDragRight', 'handleDragLeft');
+
+        hammer.on('dragright', this.handleDragRight, this);
+        hammer.on('dragleft', this.handleDragLeft, this);
+    },
+
+    handleDragRight: function (evt) {
+        this.handleDrag(evt, 'right');
+    },
+
+    handleDragLeft: function (evt) {
+        this.handleDrag(evt, 'left');
+    },
+
+    handleDrag: function (evt, direction) {
+        var gesture = evt.gesture;
+
+        evt.gesture.preventDefault();
+
+        console.log(evt);
     }
 
 };
